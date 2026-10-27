@@ -84,7 +84,7 @@ class BizMappingTests(unittest.TestCase):
             import os
             os.utime(old, (1, 1))
             table, path, note, candidates = bm.discover_table([root])
-            self.assertEqual(path, newest)
+            self.assertEqual(path, newest.resolve())
             self.assertEqual(table.resolve("咖啡").group, "饮品")
             self.assertIn("业态对照表.csv", note)
 
@@ -105,7 +105,7 @@ class BizMappingTests(unittest.TestCase):
             stamp = time.time() + 100
             os.utime(newer, (stamp, stamp))
             table, path, note, candidates = bm.discover_table([app, data])
-            self.assertEqual(path, program)
+            self.assertEqual(path, program.resolve())
             self.assertEqual(table.resolve("咖啡").group, "餐饮")
             self.assertIn("业态对照表.csv", note)
             self.assertIn("业态对照表.csv", candidates[1].name)

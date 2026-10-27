@@ -554,7 +554,7 @@ def batch_export(inputs, destination, template=None, mapping_path=None, progress
     sources = discover_sources(inputs)
     if not sources:
         raise ValueError("未找到采集记录；请选择包含capture.json的目录、ZIP或当前文档TXT")
-    folder = Path(destination) / (datetime.now().strftime("批量业态明细_%Y%m%d_%H%M%S_") + uuid.uuid4().hex[:6])
+    folder = Path(destination) / ("批量业态明细_" + datetime.now().strftime("%Y%m%d_%H%M%S_") + uuid.uuid4().hex[:6])
     folder.mkdir(parents=True, exist_ok=False)
     index_rows, outputs, pending_total = [], [], Counter()
     pending_reasons = {}

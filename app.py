@@ -633,7 +633,7 @@ class CaptureApp(WorkspaceUI):
         if self.busy:
             return
         root = Path(self.output.get()).expanduser().resolve()
-        destination = filedialog.asksaveasfilename(title="导出全部原始采集数据", initialdir=str(root), initialfile=datetime.now().strftime("原始窗口文本_批次_%Y%m%d_%H%M%S.zip"), defaultextension=".zip", filetypes=[("ZIP压缩包", "*.zip")])
+        destination = filedialog.asksaveasfilename(title="导出全部原始采集数据", initialdir=str(root), initialfile="原始窗口文本_批次_" + datetime.now().strftime("%Y%m%d_%H%M%S.zip"), defaultextension=".zip", filetypes=[("ZIP压缩包", "*.zip")])
         if not destination:
             return
         try:
