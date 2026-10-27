@@ -16,11 +16,14 @@ class FrostedHeaderTests(unittest.TestCase):
         root.update()
         header = panel.frosted_header
         header.render()
+        # place() queues geometry work; flush it before checking mapped state.
+        root.update_idletasks()
         self.assertTrue(header.surface.winfo_ismapped())
         self.assertEqual(panel.canvas.yview()[0], 0)
         panel.canvas.yview_moveto(.3)
         root.update()
         header.render()
+        root.update_idletasks()
         self.assertTrue(header.surface.winfo_ismapped())
         self.assertGreater(header.revision, 1)
         self.assertLess(header.source.getextrema()[0][0], 100)
@@ -36,6 +39,7 @@ class FrostedHeaderTests(unittest.TestCase):
             tk.Label(panel.inner, text=f'Setting {n}', background='#FAFAFA').pack(pady=8)
         root.update()
         panel.frosted_header.render()
+        root.update_idletasks()
         self.assertEqual(panel.frosted_header.image.width(), panel.canvas.winfo_width())
         self.assertLess(panel.frosted_header.source.getpixel((1, 1))[1], 255)
 
