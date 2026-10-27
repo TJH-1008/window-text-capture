@@ -1,0 +1,77 @@
+name: 问题反馈
+description: 采集不到文字、Excel 结果不对、业态映射异常等问题
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢反馈。请尽量把「现象、复现、期望」写清楚；涉及界面布局的问题建议直接贴截图。
+        提交前请确认你没有把窗口里的敏感文字、客户名单或采集数据原文贴上来。
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题出在哪一块
+      options:
+        - 采集（读不到文字 / 条数不对 / 滚不动）
+        - 清单（导入、筛选、续采、断点）
+        - 批量 Excel（解析、合并、导出）
+        - 业态对照表（不生效、匹配错、待补清单）
+        - 界面与显示（布局、缩放、图标）
+        - 打包与启动（EXE 打不开、杀软拦截）
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你看到了什么？有报错信息请原样贴出来。
+      placeholder: 点"整理并导出"后弹出/日志显示……
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 点击……
+    validations:
+      required: true
+
+  - type: textarea
+    id: expect
+    attributes:
+      label: 期望结果
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 窗口标题或左下角显示的版本号
+      placeholder: 1.5.0
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 环境
+      description: Windows 版本、显示缩放比例、是否用了自定义清单/模板
+      placeholder: Windows 11 23H2，缩放 125%，清单 149 项，未用自定义模板
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志与截图
+      description: 界面下方"运行日志"的相关几行；或批次索引里"处理说明"的内容。**请先脱敏**。
+      render: text
+    validations:
+      required: false

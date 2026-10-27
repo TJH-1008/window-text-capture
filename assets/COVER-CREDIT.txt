@@ -1,0 +1,4 @@
+Current icons and workspace covers are generated locally by build_assets.py
+and brand_icon.py. The unused legacy reference image and its local inspection
+script are omitted from this public distribution. Original programmatic
+assets and the existing project copyright notice are retained.

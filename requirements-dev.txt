@@ -1,0 +1,4 @@
+-r requirements.txt
+pyinstaller>=6.0
+# Only verify_package.py uses this workbook readback dependency.
+openpyxl>=3.1

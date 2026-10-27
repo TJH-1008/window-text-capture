@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 使用说明与常见问题
+    url: https://github.com/TJH-1008/window-text-capture/blob/main/docs/使用说明.md
+    about: 查看采集步骤、使用边界与常见问题。
+  - name: 业态对照表
+    url: https://github.com/TJH-1008/window-text-capture/blob/main/docs/业态对照表.md
+    about: 查看表格式、匹配顺序与待补清单说明。

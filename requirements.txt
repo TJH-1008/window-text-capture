@@ -1,0 +1,2 @@
+# GUI runtime; capture/parsing uses the Python standard library.
+pillow>=10.0

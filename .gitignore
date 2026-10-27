@@ -1,0 +1,46 @@
+# Python and virtual environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+# Build and local verification output
+build/
+dist/
+release/
+verification*/
+smoke.json
+*_report.json
+*.spec.bak
+*.manifest.bak
+# Runtime data and original business inputs
+采集数据/
+captures/
+Excel结果/
+原始数据库/
+清单任务/
+商务局商场采集清单*
+商务局商场采集队列*
+*.db
+*.sqlite*
+*.jsonl
+*.log
+*.exe
+*.zip
+*.7z
+*.rar
+# Credentials, editors, Office and OS temporary files
+.env
+.env.*
+*.pem
+*.key
+~$*
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+assets/icons-lab/
